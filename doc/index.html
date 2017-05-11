@@ -1,0 +1,460 @@
+			<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<title>KAdmin文档_V1.0</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style>
+		        body {
+            color: #666666;
+            font-family: 微软雅黑,Verdana,sans-serif,宋体;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #999999;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #16B28F;
+        }
+        .sin_navi ul {
+            list-style: none outside none;
+            margin: 0;
+            padding: 0 0 0 10px;
+        }
+        .sin_navi ul li {
+            line-height: 30px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        li {
+            line-height: 24px;
+        }
+        table {
+            border-left: 1px solid #CCCCCC;
+            border-top: 1px solid #CCCCCC;
+            margin: 5px 10px;
+            text-align: left;
+            width: 678px;
+        }
+        table th {
+            background-color: #EEEEEE;
+            border-bottom: 1px solid #CCCCCC;
+            border-right: 1px solid #CCCCCC;
+            padding: 10px;
+        }
+        table td {
+            border-bottom: 1px solid #CCCCCC;
+            border-right: 1px solid #CCCCCC;
+        }
+        p {
+            line-height: 24px;
+            margin: 10px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #111111;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 26px;
+        }
+        h2 {
+            border-bottom: 1px dashed #CCCCCC;
+            font-size: 24px;
+            padding: 10px 0;
+        }
+        h3 {
+            font-size: 20px;
+            padding: 8px 0;
+        }
+        h4 {
+            font-size: 18px;
+            margin-left: 10px;
+            padding: 5px 0;
+        }
+        h5 {
+            font-size: 16px;
+            margin-left: 10px;
+            padding: 5px 0;
+        }
+        h6 {
+            font-size: 16px;
+            margin-left: 10px;
+            padding: 5px 0;
+        }
+        blockquote {
+            background: url("../../../img/blockquote.gif") no-repeat scroll left top #F4F5F7;
+            margin: 5px 10px;
+            padding: 10px 10px 10px 30px;
+        }
+        pre {
+            background: none repeat scroll 0 0 #EEEEEE;
+            margin: 5px 10px;
+            padding: 10px;
+        }
+        .sin_callout {
+            margin: 5px 10px;
+        }
+        .sin_header {
+            background-color: #F7F7F7;
+            border-bottom: 1px solid #CCCCCC;
+            height: 80px;
+            width: 100%;
+        }
+        .sin_title {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        .sin_title_text {
+            color: #000000;
+            float: left;
+            line-height: 80px;
+        }
+        .sin_version {
+            color: #999999;
+            float: left;
+            font-size: 14px;
+            padding-top: 25px;
+            margin-left: 10px;
+        }
+        .sin_main {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        .sin_navi {
+            float: left;
+            margin-bottom: 20px;
+            overflow-y: scroll;
+            padding: 0;
+            position: relative;
+            width: 279px;
+            z-index: 1;
+        }
+        .sin_navi_nomove {
+            position: fixed;
+            top: 0;
+        }
+        .sin_navi_ca a {
+            color: #333333;
+        }
+        .sin_navi_ca a:hover {
+            color: #16B28F;
+        }
+        .sin_navi_current {
+            border-right: 3px solid #16B28F;
+        }
+        .sin_navi_current a {
+            color: #16B28F;
+        }
+        .sin_content {
+            background-color: #FFFFFF;
+            border-left: 1px solid #CCCCCC;
+            float: left;
+            margin-left: -20px;
+            padding: 10px 20px;
+            position: relative;
+            width: 699px;
+            z-index: 2;
+        }
+        .sin_content_mar {
+            margin-left: 259px;
+        }
+        .sin_footer {
+            border-top: 1px solid #CCCCCC;
+            color: #999999;
+            height: 80px;
+            line-height: 80px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .sin_info {
+            background: none repeat scroll 0 0 #FFFFCC;
+            border: 1px solid #D5D4D4;
+            border-radius: 4px 4px 4px 4px;
+            color: #999999;
+            margin: 10px 0;
+            padding: 14px;
+        }
+        .sin_link_logo {
+            color: #16B28F;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .sin_text {
+            margin-bottom: 10px;
+        }
+        .d_callout {
+            margin-bottom: 10px;
+        }
+        .d_callout_info {
+            background: none repeat scroll 0 0 #F4F8FA;
+            border-left: 4px solid #5BC0DE;
+            padding: 10px;
+        }
+        .d_callout_warn {
+            background: none repeat scroll 0 0 #FCF8F2;
+            border-left: 4px solid #F0AD4E;
+            padding: 10px;
+        }
+        .d_callout_danger {
+            background: none repeat scroll 0 0 #FDF7F7;
+            border-left: 4px solid #D9534F;
+            padding: 10px;
+        }
+        .d_callout_success {
+            background: none repeat scroll 0 0 #F3F8F3;
+            border-left: 4px solid #50AF51;
+            padding: 10px;
+        }
+        .d_callout input {
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 15px;
+            margin-bottom: 5px;
+            padding: 10px 5px 0 10px;
+        }
+        .d_callout textarea {
+            background-color: rgba(0, 0, 0, 0);
+        }
+        .d_callout_icons a {
+            color: #AAAAAA;
+            margin-left: 10px;
+        }
+        a.d_callout_icon_info {
+            color: #5BC0DE;
+        }
+        a.d_callout_icon_warn {
+            color: #F0AD4E;
+        }
+        a.d_callout_icon_danger {
+            color: #D9534F;
+        }
+        a.d_callout_icon_success {
+            color: #50AF51;
+        }
+        .clear {
+            clear: both;
+        }
+
+	</style>
+</head>
+<body>
+	<div class="sin_header">
+		<div class="sin_title">
+			<h1 class="sin_title_text">KAdmin文档</h1>
+			<span class="sin_version">V1.0</span>
+			<div class="clear"></div>
+		</div>
+		<div id="top_end"></div>
+	</div>
+	<div class="sin_main">
+		<div class="sin_navi" id="sin_navi_id">
+			<ul style="margin: 20px 0;">
+				    																					<li class="sin_navi_ca" style="width: 246px;" id="navi_category_44993">
+								<a href="#category_44993">
+									第一章：系统介绍与使用
+								</a>
+							</li>
+										<ul>
+																								<li style="width:236px" id="navi_text_186045">
+						<a href="#text_186045">
+							1.KAdmin介绍
+						</a>	
+					</li>
+																										<li style="width:236px" id="navi_text_186047">
+						<a href="#text_186047">
+							2.快速开始
+						</a>	
+					</li>
+																										<li style="width:236px" id="navi_text_186151">
+						<a href="#text_186151">
+							3.Docker部署
+						</a>	
+					</li>
+																										<li style="width:236px" id="navi_text_186157">
+						<a href="#text_186157">
+							4.系统截图
+						</a>	
+					</li>
+											</ul>
+																			</ul>
+		</div>
+		<div class="sin_content" id="sin_content_id">
+																					<h2 id="category_44993">第一章：系统介绍与使用</h2>
+																								<h3 id="text_186045" class="sin_target">1.KAdmin介绍</h3>
+<div class="sin_text">
+    					<ol> 
+ <li>KangarooAdmin是以SpringMVC+Mybatis+MySQL为核心开发的精简后台基础系统。</li> 
+ <li>包含用户管理,角色管理,部门管理,权限管理,菜单管理,日志管理等常用业务模块。</li> 
+ <li>使用AdminLTE作为前端UI框架。</li> 
+ <li>第三方Mybatis-plus作为ORM框架。</li> 
+ <li>Encache权限缓存。</li> 
+ <li>FreeMarker模板,页面拆分,封装公共部分。</li> 
+ <li>Druid数据源,数据库监控。</li> 
+ <li>报表支持。</li> 
+</ol>
+			</div>
+
+																						<h3 id="text_186047" class="sin_target">2.快速开始</h3>
+<div class="sin_text">
+    					<ol> 
+ <li>创建数据库kangarooadmin,导入resource/sql/kangarooadmin.sql数据库脚本。</li> 
+ <li>把项目导入到eclipse中启动,端口为8080,上下文为/。</li> 
+ <li>地址栏输入 <a href="http://localhost.com:8080，账号/密码:admin/123456。" rel="nofollow">http://localhost.com:8080，账号/密码:admin/123456。</a></li> 
+</ol>
+			</div>
+
+																						<h3 id="text_186151" class="sin_target">3.Docker部署</h3>
+<div class="sin_text">
+    					<ol> 
+ <li>安装好Docker环境,登录到Docker服务器。</li> 
+ <li>git clone <a href="https://git.oschina.net/zhougaojun/KangarooAdmin.git" rel="nofollow">https://git.oschina.net/zhougaojun/KangarooAdmin.git</a></li> 
+ <li>cd KangarooAdmin</li> 
+ <li>docker build -t git.oschina.net/zhougaojun/kangaroo_admin .</li> 
+ <li>docker run -p 8080:8080 -t git.oschina.net/zhougaojun/kangaroo_admin</li> 
+ <li><a href="http://ip:8080，账号/密码:admin/123456。" rel="nofollow">http://ip:8080，账号/密码:admin/123456。</a></li> 
+ <li>也可以借助第三方docker平台完成部署,这样更加省事,如:daocloud,csphere等docker云平台。</li> 
+</ol>
+			</div>
+
+																						<h3 id="text_186157" class="sin_target">4.系统截图</h3>
+<div class="sin_text">
+    					<p><img src="https://static.oschina.net/uploads/img/201705/10144731_wsR1.png" alt="输入图片说明" title="在这里输入图片标题"><br><img src="https://static.oschina.net/uploads/img/201705/10144743_M6Is.png" alt="输入图片说明" title="在这里输入图片标题"><br><img src="https://static.oschina.net/uploads/img/201705/10144753_aMqP.png" alt="输入图片说明" title="在这里输入图片标题"><br><img src="https://static.oschina.net/uploads/img/201705/10144800_B0TL.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+			</div>
+
+																									
+					</div>
+		<div class="clear"></div>
+	</div>
+	<div id="bottom_begin"></div>
+	<div class="sin_footer">
+		<div>
+			Powered by <a href="http://www.oschina.net" target="_blank">开源中国</a>
+		</div>
+	</div>
+	<script>
+		//计算图片的真实大小，如果超过编辑区域，则进行限制
+		var resizePicWidth = function(pic_width){
+			var imgs = document.getElementsByTagName("img");
+            var j=0;
+			for(var i=0;i<imgs.length;i++){
+                var realWidth;	//真实的宽度
+                var realHeight;		//真实的高度
+                //这里做下说明，$("<img/>")这里是创建一个临时的img标签，类似js创建一个new Image()对象！
+				var newImg = new Image();
+				newImg.onload=function() {
+                    realWidth = imgs[j].width;
+                    realHeight = imgs[j].height;
+                    //如果真实的宽度大于规定的宽度就按照100%显示
+                    if(realWidth>=pic_width){
+						imgs[j].style.width=(pic_width) + "px";
+                    } else{//如果小于浏览器的宽度按照原尺寸显示
+						imgs[j].style.width=realWidth+'px';
+                    }
+                    j++;
+                }
+				newImg.src=imgs[j].src;
+			}
+
+		}
+		var currentNode = null;
+		window.onscroll=function(){
+            var h = document.getElementById("top_end").getBoundingClientRect().top;
+            if(h<=0){
+				document.getElementById("sin_navi_id").className='sin_navi sin_navi_nomove';
+				document.getElementById("sin_content_id").className='sin_content sin_content_mar';
+            }else{
+                document.getElementById("sin_navi_id").className='sin_navi';
+                document.getElementById("sin_content_id").className='sin_content';
+            }
+            comLayout();
+            var arr= new Array();
+            var index = 0;
+			var sinTargets = getClass("h2","sin_target");
+			for(var i=0;i<sinTargets.length;i++){
+                var th = sinTargets[i].getBoundingClientRect().top - 80;	                if(th<=0){
+                    arr[index] = new Array();
+                    arr[index][0] = sinTargets[i].getAttribute("id");
+                    arr[index][1] = th;
+                    index++;
+                }
+			}
+
+            var curr = bubbleSort(arr);
+            if(curr!=null && curr!=currentNode){
+				var oldCurrIds = getClass("li","sin_navi_current");
+                if(oldCurrIds && oldCurrIds[0]){
+                    var oid=oldCurrIds[0].getAttribute("id");
+                    document.getElementById(oid).className=" ";
+                }
+				document.getElementById("navi_"+curr).className="sin_navi_current";
+                currentNode = curr;
+            }
+        }
+		
+		
+	    window.onresize = function(){
+            comLayout();
+		}
+
+        var ch = document.getElementById("sin_navi_id").offsetHeight;
+
+	    function comLayout() {
+	        var h = document.documentElement.clientHeight;
+	    	if(ch<h){
+	    		return;
+	    	}
+		    var i = document.getElementById("bottom_begin").getBoundingClientRect().top;
+	        if(i<h){
+                document.getElementById("sin_navi_id").style.height=(i+"px");
+		   	}else{
+                document.getElementById("sin_navi_id").style.height=(h+"px");
+		   	}
+	    }
+	    
+	    function bubbleSort(arr){
+	    	var i= arr.length;
+	    	if(i<=0){
+	    		return null;
+	    	}
+	    	var j;
+			var tempExchangVal;
+			while(i>0){
+				for(j=0;j<i-1;j++){
+					if(arr[j][1] < arr[j+1][1]){
+						tempExchangVal=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=tempExchangVal;
+					}
+				}
+				i--;
+			}
+			return arr[0][0];
+		}
+	    comLayout();
+	    resizePicWidth(680);
+
+        function getClass(tagname, className) { //tagname指元素，className指class的值
+            //判断浏览器是否支持getElementsByClassName，如果支持就直接的用
+            if (document.getElementsByClassName) {
+                return document.getElementsByClassName(className);
+            }
+            else {    //当浏览器不支持getElementsByClassName的时候用下面的方法
+                var tagname = document.getElementsByTagName(tagname);  //获取指定元素
+                var tagnameAll = [];     //这个数组用于存储所有符合条件的元素
+                for (var i = 0; i < tagname.length; i++) {     //遍历获得的元素
+                    if (tagname[i].className == className) {     //如果获得的元素中的class的值等于指定的类名，就赋值给tagnameAll
+                        tagnameAll[tagnameAll.length] = tagname[i];
+                    }
+                }
+                return tagnameAll;
+            }
+        }
+	</script>
+</body>
+</html>	
+<!-- Generated by OsChina.NET (init:1[ms],page:40[ms],ip:61.178.73.233) -->
